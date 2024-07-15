@@ -1,0 +1,53 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    
+    <br> <br>
+    <h3>
+        Create a New Listing
+    </h3>
+    <form method="POST"  action="/listings" class="needs-validation" novalidate >
+    <div class="row">  
+        <div class="col-8 offset-2">  
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="listing[title]" placeholder="Add a Catchy Title" type="text" class="form-control" required>
+            <div class="invalid-feedback">Enter Title</div>
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea  required name="listing[description]" class="form-control"></textarea>
+            <div class="invalid-feedback">Enter Description</div>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image Link</label>
+            <input name="listing[image]" class="form-control" placeholder="Enter image URL/Link" type="text">
+        </div>
+        
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label for="price" class="form-label">Price</label>
+                <input  required name="listing[price]" class="form-control" placeholder="1200 /-" type="">
+                <div class="invalid-feedback">Enter Price</div>
+            </div>
+            <div class="mb-3 col-md-8">
+                <label for="country" class="form-label">Country</label>
+                <input required name="listing[country]" class="form-control" placeholder=" India" type="text">
+                <div class="invalid-feedback">Enter Country</div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input  required name="listing[location]" class="form-control" placeholder=" Jaipur, Rajasthan" type="text">
+            <div class="invalid-feedback">Enter Location</div>
+        </div>
+        
+       
+        <button class="btn btn-dark add-btn"> 
+            Add
+        </button>
+    </div>
+    </div>
+   <br> <br>
+</body>

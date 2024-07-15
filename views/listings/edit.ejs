@@ -1,0 +1,53 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <br>
+    <h3 class="offset-3">
+        Edit Your Listing
+    </h3> <br>
+    <form novalidate class="needs-validation" method="POST" action="/listings/<%= listing.id %>?_method=PUT">
+    <div class="row">  
+        <div class="col-8 offset-2">  
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input required name="listing[title]" value="<%= listing.title%>" type="text" class="form-control">
+            <div class="invalid-feedback">Enter Title</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea  required name="listing[description]" class="form-control" ><%= listing.description %></textarea>
+            <div class="invalid-feedback">Enter Description</div>
+        </div>
+        <div class="mb-3">
+            <label for="image.url" class="form-label">Image Link</label>
+            <input required name="listing[image.url]" class="form-control" value="<%= listing.image.url %>" type="text">
+            <div class="invalid-feedback">Enter  A Valid Image Link</div>
+        </div>
+        
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label for="price" class="form-label">Price</label>
+                <input required name="listing[price]" value="<%= listing.price %>" class ="form-control" placeholder="1200 /-" type="number">
+                <div class="invalid-feedback">Enter Price</div>
+            </div>
+            <div class="mb-3 col-md-8">
+                <label for="country" class="form-label">Country</label>
+                <input required name="listing[country]" value ="<%= listing.country %>" class="form-control" placeholder=" India" type="text">
+                <div class="invalid-feedback">Enter Country</div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input required name="listing[location]" value ="<%= listing.location %>" class="form-control" placeholder=" Jaipur, Rajasthan" type="text">
+            <div class="invalid-feedback">Enter Location</div>
+        </div>
+        
+       
+        <button class="btn btn-dark add-btn"> 
+            Add
+        </button>
+    </div>
+    </div>
+    </form> <br> <br>
+
+</body>
